@@ -1,289 +1,206 @@
-# Statistics & Math for Data Analysis
 
-This document contains quick reference notes for fundamental **statistics and mathematics concepts used in data analysis**. These concepts help analysts summarize data, understand distributions, and perform calculations needed for decision-making.
+Basic statistics
 
----
+## 🔹 1. Mean (Average)
 
-# 1. Basic Statistics
+**Theory:**
+Mean is the average value of a dataset. It shows the central value.
 
-## Mean (Average)
-
-The **mean** is the average value of a dataset. It is calculated by adding all the values and dividing by the number of observations.
-
-**Formula**
-
+**Formula:**
 Mean = (Sum of all values) / (Number of values)
 
-**Example**
-
-Values: 10, 20, 30  
-Mean = (10 + 20 + 30) / 3 = 20
-
-**Use Cases**
-- Average sales
-- Average revenue per user
-- Average customer spending
+**Example:**
+Data = 2, 4, 6, 8
+Mean = (2+4+6+8)/4 = **5**
 
 ---
 
-## Median
+## 🔹 2. Median
 
-The **median** is the middle value of a dataset when the values are arranged in ascending order.
+**Theory:**
+Median is the middle value when data is arranged in order.
 
-**Example (Odd number of values)**
+**Steps:**
 
-Dataset: 2, 4, 6, 8, 10  
-Median = 6
+* Sort data
+* If odd → middle value
+* If even → average of two middle values
 
-**Example (Even number of values)**
-
-Dataset: 2, 4, 6, 8  
-Median = (4 + 6) / 2 = 5
-
-**Use Cases**
-- Income analysis
-- Datasets with extreme outliers
+**Example:**
+Data = 1, 3, 5 → Median = **3**
+Data = 1, 3, 5, 7 → Median = (3+5)/2 = **4**
 
 ---
 
-## Mode
+## 🔹 3. Mode
 
-The **mode** is the value that appears most frequently in a dataset.
+**Theory:**
+Mode is the most frequently occurring value.
 
-**Example**
-
-Dataset: 1, 2, 2, 3, 4  
-Mode = 2
-
-**Types**
-- Unimodal → one mode
-- Bimodal → two modes
-- Multimodal → more than two modes
-
-**Use Cases**
-- Most popular product
-- Most frequent category in a dataset
+**Example:**
+Data = 2, 3, 3, 5, 7
+Mode = **3**
 
 ---
 
-## Variance
+## 🔹 4. Variance
 
-**Variance** measures how far each data point is from the mean.
+**Theory:**
+Variance measures how far data points are spread from the mean.
 
-It indicates how spread out the data values are.
+**Idea:**
+Higher variance = more spread
 
-**Concept**
+**Formula (basic idea):**
+Average of squared differences from mean
 
-Variance = Average of squared differences from the mean.
-
-**Use Cases**
-- Measuring variability in datasets
-- Financial risk analysis
-
----
-
-## Standard Deviation (SD)
-
-**Standard deviation** measures the average distance of each data point from the mean.
-
-- Small SD → data points are close to the mean
-- Large SD → data points are widely spread
-
-**Relationship**
-
-Standard Deviation = √Variance
-
-**Use Cases**
-- Stock market volatility
-- Sales variability
-- Risk measurement
+**Example:**
+Data = 2, 4, 6
+Mean = 4
+Differences = (-2, 0, +2)
+Squared = (4, 0, 4)
+Variance = (4+0+4)/3 = **2.67**
 
 ---
 
-## Measures of Dispersion
+## 🔹 5. Standard Deviation (SD)
 
-Measures of dispersion describe how spread out data values are.
+**Theory:**
+Square root of variance → tells spread in original units
 
-**Common Measures**
-- Range
-- Variance
-- Standard Deviation
-- Quartiles
-- Interquartile Range (IQR)
+**Example:**
+Variance = 2.67
+SD = √2.67 ≈ **1.63**
 
-**Example**
+👉 Easy way to think:
 
-Dataset A: 50, 50, 50, 50  
-Dataset B: 10, 30, 70, 90  
-
-Both datasets may have the same mean but very different spreads.
+* Low SD → data close to mean
+* High SD → data scattered
 
 ---
 
-## Normal Distribution
+## 🔹 6. Normal Distribution
 
-A **normal distribution** is a probability distribution where data forms a symmetric bell-shaped curve.
+**Theory:**
+A bell-shaped curve where most values are near the mean.
 
-**Characteristics**
+genui{"math_block_widget_always_prefetch_v2":{"content":"f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}"}}
 
-- Mean = Median = Mode
-- Symmetrical around the center
-- Most data lies near the mean
+**Key Rule (68-95-99.7):**
 
-**Empirical Rule**
+* 68% data within 1 SD
+* 95% within 2 SD
+* 99.7% within 3 SD
 
-- 68% of data lies within 1 standard deviation
-- 95% lies within 2 standard deviations
-- 99.7% lies within 3 standard deviations
-
-**Use Cases**
-- Exam scores
-- Heights of people
-- Measurement errors
+**Example:**
+If mean = 50, SD = 10
+→ Most values lie between **40 and 60**
 
 ---
 
-## Percentiles
+## 🔹 7. Measure of Dispersion
 
-A **percentile** indicates the value below which a certain percentage of data falls.
+**Theory:**
+Shows how spread out data is.
 
-**Examples**
+**Types:**
 
-50th percentile → Median  
-90th percentile → 90% of data lies below this value
+* Range = max - min
+* Variance
+* Standard Deviation
 
-**Use Cases**
-- Exam rankings
-- Salary distribution
-- Performance benchmarking
-
----
-
-## Quartiles
-
-**Quartiles** divide a dataset into four equal parts.
-
-**Types**
-
-Q1 → 25th percentile  
-Q2 → 50th percentile (Median)  
-Q3 → 75th percentile
-
-**Interquartile Range (IQR)**
-
-IQR = Q3 − Q1
-
-**Use Cases**
-- Detecting outliers
-- Understanding data spread
+**Example:**
+Data = 5, 10, 15
+Range = 15 - 5 = **10**
 
 ---
 
-## Probability
+## 🔹 8. Percentiles
 
-**Probability** measures the likelihood of an event occurring.
+**Theory:**
+Value below which a % of data falls
 
-**Formula**
+**Example:**
+90th percentile = value below which 90% data lies
 
-Probability = Favorable outcomes / Total possible outcomes
-
-**Example**
-
-Probability of getting heads in a coin toss = 1/2
-
-**Probability Range**
-
-0 → Impossible event  
-1 → Certain event
-
-**Use Cases**
-- Predictive modeling
-- Risk assessment
-- Machine learning algorithms
+👉 Used in exams, rankings, analytics dashboards
 
 ---
 
-# 2. Basic Math for Data Analysis
+## 🔹 9. Quartiles
 
-## Arithmetic
+**Theory:**
+Divide data into 4 equal parts
 
-Arithmetic involves basic mathematical operations:
+* Q1 → 25%
+* Q2 → Median (50%)
+* Q3 → 75%
 
-- Addition (+)
-- Subtraction (-)
-- Multiplication (×)
-- Division (÷)
-
-These operations are fundamental for performing calculations in data analysis.
-
-**Use Cases**
-
-- Calculating totals
-- Data transformations
-- Basic numerical analysis
+**Example:**
+Data = 1,2,3,4,5,6,7,8
+Q2 = 4.5 (median)
+Q1 = 2.5
+Q3 = 6.5
 
 ---
 
-## Weighted Average
+## 🔹 10. Probability
 
-A **weighted average** assigns different levels of importance (weights) to values.
+**Theory:**
+Chance of an event occurring
 
-**Formula**
+**Formula:**
+Probability = Favorable outcomes / Total outcomes
 
-Weighted Average = (Σ value × weight) / (Σ weights)
+**Example:**
+Coin toss
+P(Head) = 1/2 = **0.5**
 
-**Example**
+---
 
+# 🔢 BASIC MATH
+
+---
+
+## 🔹 11. Arithmetic
+
+**Theory:**
+Basic operations: +, −, ×, ÷
+
+**Example:**
+(5 + 3) × 2 = **16**
+
+---
+
+## 🔹 12. Weighted Average
+
+**Theory:**
+Average where values have different importance (weights)
+
+**Formula:**
+Weighted Avg = Σ(value × weight) / Σ(weights)
+
+**Example:**
 Marks:
+Math = 80 (weight 2)
+English = 70 (weight 1)
 
-Math: 90 (weight 50%)  
-Science: 80 (weight 30%)  
-English: 70 (weight 20%)
-
-Weighted average = (90×0.5 + 80×0.3 + 70×0.2)
-
-**Use Cases**
-
-- GPA calculation
-- Portfolio returns
-- Performance scoring systems
+Weighted Avg = (80×2 + 70×1)/3 = **76.67**
 
 ---
 
-## Cumulative Sum
+## 🔹 13. Cumulative Sum
 
-**Cumulative sum** is the running total of a sequence of numbers.
+**Theory:**
+Running total of values
 
-Each value is added to the previous total.
+**Example:**
+Data = 2, 4, 6
+Cumulative sum =
+2 → 2+4=6 → 6+6=12
 
-**Example**
-
-Dataset: 5, 10, 15, 20
-
-Cumulative Sum:
-
-5  
-5 + 10 = 15  
-15 + 15 = 30  
-30 + 20 = 50
-
-Result: 5, 15, 30, 50
-
-**Use Cases**
-
-- Running revenue totals
-- Time series analysis
-- Tracking growth over time
+Result: **2, 6, 12**
 
 ---
-
-# Summary
-
-These statistics and mathematical concepts form the **foundation of data analysis**. They help analysts:
-
-- Summarize large datasets
-- Understand patterns and distributions
-- Measure variability
-- Perform calculations required for decision-making
-
-Mastering these fundamentals is essential before moving to tools like **SQL, Python, Excel, and data visualization platforms**.
+* Or give you **practice questions like real data analyst interviews**
+* Or connect this with **Excel / Python use cases (super important)**
