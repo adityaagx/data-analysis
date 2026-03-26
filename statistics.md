@@ -84,8 +84,6 @@ SD = √2.67 ≈ **1.63**
 **Theory:**
 A bell-shaped curve where most values are near the mean.
 
-genui{"math_block_widget_always_prefetch_v2":{"content":"f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}"}}
-
 **Key Rule (68-95-99.7):**
 
 * 68% data within 1 SD
@@ -202,5 +200,3 @@ Cumulative sum =
 Result: **2, 6, 12**
 
 ---
-* Or give you **practice questions like real data analyst interviews**
-* Or connect this with **Excel / Python use cases (super important)**
